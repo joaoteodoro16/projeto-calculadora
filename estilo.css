@@ -1,0 +1,32 @@
+.calculadora{
+    background-color:darkslategray;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #000;
+}
+
+.btn{
+    width: 60px;
+    margin: 3px;
+    height: 50px;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.resultado{
+    text-align: right;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: solid 1px #000;
+        box-shadow: 1px 1px 1px #000;
+}
+
+.divisao{
+    margin-right: 8px ;
+}
+
+.btn-grande{
+    width: 130px;
+    margin-right: 8px;
+}
