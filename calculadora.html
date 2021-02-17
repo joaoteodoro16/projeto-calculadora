@@ -10,32 +10,54 @@
 <body>
     <div class="calculadora">
         <h3>Calculadora</h3>
-        <input type="text" placeholder="0" disabled="disabled">
+        <input type="text" placeholder="0" disabled="disabled" id="display">
 
         <div class="botoes">
 
-            <button class="botao-calculadora limpar">C</button>    
-            <button class="botao-calculadora">/</button>
-            <button class="botao-calculadora">x</button>
+            <button onclick="calcular('acao', 'c')" class="botao-calculadora limpar">C</button>    
+            <button onclick="calcular('acao','/')" class="botao-calculadora">/</button>
+            <button onclick="calcular('acao','*')" class="botao-calculadora">x</button>
 
-            <button class="botao-calculadora">7</button>
-            <button class="botao-calculadora">8</button>
-            <button class="botao-calculadora">9</button>
-            <button class="botao-calculadora">+</button>
+            <button onclick="calcular('valor',7)" class="botao-calculadora">7</button>
+            <button onclick="calcular('valor',8)" class="botao-calculadora">8</button>
+            <button onclick="calcular('valor',9)" class="botao-calculadora">9</button>
+            <button onclick="calcular('acao','+')" class="botao-calculadora">+</button>
 
-            <button class="botao-calculadora">4</button>
-            <button class="botao-calculadora">5</button>
-            <button class="botao-calculadora">6</button>
-            <button class="botao-calculadora">-</button>
-        
-            <button class="botao-calculadora">1</button>
-            <button class="botao-calculadora">2</button>
-            <button class="botao-calculadora">3</button>
-            <button class="botao-calculadora">.</button>
+            <button onclick="calcular('valor',4)" class="botao-calculadora">4</button>
+            <button onclick="calcular('valor',5)" class="botao-calculadora">5</button>
+            <button onclick="calcular('valor',6)" class="botao-calculadora">6</button>
+            <button onclick="calcular('acao','-')" class="botao-calculadora">-</button>
 
-            <button class="botao-calculadora zero">0</button>
-            <button class="botao-calculadora igual">=</button>
+            <button onclick="calcular('valor',1)" class="botao-calculadora">1</button>
+            <button onclick="calcular('valor',2)" class="botao-calculadora">2</button>
+            <button onclick="calcular('valor',3)" class="botao-calculadora">3</button>
+            <button onclick="calcular('acao','.')" class="botao-calculadora">.</button>
+
+            <button onclick="calcular('valor',0)" class="botao-calculadora zero">0</button>
+            <button onclick="calcular('acao','=')" class="botao-calculadora igual">=</button>
         </div>
     </div>
+    <script>
+        function calcular(tipo,valor){
+            if(tipo=='acao'){
+                if(valor=='c'){
+                    document.getElementById('display').value="";
+                }
+            }
+
+            if(valor==='+' || valor==='-'|| valor==='*' || valor==='/' || valor ==='.'){
+                document.getElementById('display').value +=valor;
+            }
+
+            if(valor=="="){
+                expressaoMatematica = eval(document.getElementById('display').value);
+                document.getElementById('display').value = expressaoMatematica;
+            }
+
+            if(tipo=='valor'){
+                document.getElementById('display').value +=valor;
+            }
+        }
+    </script>
 </body>
 </html>
